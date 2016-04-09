@@ -1,0 +1,15 @@
+'.source.wolfie':
+  'editor':
+    'commentStart': '#'
+    'increaseIndentPattern': '(?x)
+       ^ .* \\{ [^}"\']* $
+      |^ .* \\( [^\\)"\']* $
+      |^ \\s* \\{ \\} $
+      '
+    'decreaseIndentPattern': '(?x)
+       ^ \\s* (\\s* /[*] .* [*]/ \\s*)* \\}
+      |^ \\s* (\\s* /[*] .* [*]/ \\s*)* \\)
+      '
+'.source.wolfie':
+  'editor':
+    'foldEndPattern': '(?<!\\*)\\*\\*/|^\\s*\\}'
