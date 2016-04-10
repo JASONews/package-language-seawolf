@@ -1,5 +1,5 @@
 # this part of code are borrowed from package language-c
-'.source.wolfie':
+'.source.seawolf':
   'editor':
     'increaseIndentPattern': '(?x)
        ^ .* \\{ [^}"\']* $
@@ -10,6 +10,6 @@
        ^ \\s* (\\s* /[*] .* [*]/ \\s*)* \\}
       |^ \\s* (\\s* /[*] .* [*]/ \\s*)* \\)
       '
-'.source.wolfie':
+'.source.seawolf':
   'editor':
     'foldEndPattern': '(?<!\\*)\\*\\*/|^\\s*\\}'

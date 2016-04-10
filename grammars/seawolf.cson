@@ -40,29 +40,29 @@
 ]
 'repository':
   'string':
-    'name': 'string.wolfie'
+    'name': 'string.seawolf'
     'match': '\\"[^\\"]*\\"'
   'single_quote_string':
     'begin': '\''
     'end': '\''
-    'name':'invalid.illegal.string.wolfie'
+    'name':'invalid.illegal.string.seawolf'
   'real':
-    'name': 'constant.numeric.real.wolfie'
+    'name': 'constant.numeric.real.seawolf'
     'match': '\\d*(\\d\\.|\\.\\d)\\d*'
   'control_keyword':
-    'name': 'keyword.control.wolfie'
+    'name': 'keyword.control.seawolf'
     'match': 'if|else|while|break|continue|switch|case|return'
   'integer':
-    'name': 'constant.numeric.integer.wolfie'
+    'name': 'constant.numeric.integer.seawolf'
     'match': '\\d+'
   'arithmetic_operator':
-    'name': 'keyword.operator.arithmetic.wolfie'
+    'name': 'keyword.operator.arithmetic.seawolf'
     'match': '\\+|\\-|\\*\\*|\\/|\\(|\\)|\\{|\\}'
   'logical_operator':
-    'name': 'keyword.operator.logical.wolfie'
+    'name': 'keyword.operator.logical.seawolf'
     'match': 'and|or|not|\\!|\\&\\&|\\|\\|'
   'builtin_function':
-    'name': 'support.function.builtin.wolfie'
+    'name': 'support.function.builtin.seawolf'
     'match': 'print'
   'function_definition':
     {
@@ -70,10 +70,10 @@
       'end': '(\\))\\s*(?=\\{)'
       'endCaptures':
         '1':
-          'name': 'punctuation.definition.parameters.end.wolfie'
+          'name': 'punctuation.definition.parameters.end.seawolf'
         '2':
-          'name': 'punctuation.section.function.begin.wolfie'
-      'name': 'meta.function.wolfie'
+          'name': 'punctuation.section.function.begin.seawolf'
+      'name': 'meta.function.seawolf'
       'patterns': [
         {
           'include': '#control_keyword'
@@ -83,24 +83,24 @@
         }
         {
           'begin': '(?=[A-Za-z][A-Za-z0-9]*)'
-          'contentName': 'entity.name.function.wolfie'
+          'contentName': 'entity.name.function.seawolf'
           'end': '(?![A-Za-z0-9])'
         }
         {
           'begin': '(\\()'
           'beginCaptures':
             '1':
-              'name': 'punctuation.definition.parameters.begin.wolfie'
-          'contentName': 'meta.function.parameters.wolfie'
+              'name': 'punctuation.definition.parameters.begin.seawolf'
+          'contentName': 'meta.function.parameters.seawolf'
           'end': '(?=\\)\\s*\\{)'
           'patterns': [
             {
               'match': '\\b([a-zA-Z][a-zA-Z0-9]*)\\s*(?:(,)|(?=\\)))'
               'captures':
                 '1':
-                  'name': 'variable.parameter.function.wolfie'
+                  'name': 'variable.parameter.function.seawolf'
                 '2':
-                  'name': 'punctuation.separator.parameters.wolfie'
+                  'name': 'punctuation.separator.parameters.seawolf'
 
             }
           ]
@@ -111,7 +111,7 @@
     'match': '(\\b[A-Za-z][A-Za-z0-9]*)\\s*(?=\\()'
     'captures':
       '1':
-        'name': 'meta.function.wolfie'
+        'name': 'meta.function.seawolf'
   'variable':
-    'name': 'variable.other.wolfie'
+    'name': 'variable.other.seawolf'
     'match': '\\b[A-Za-z][A-Za-z0-9_]*\\b'
