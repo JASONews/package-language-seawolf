@@ -1,6 +1,6 @@
+# this part of code are borrowed from package language-c
 '.source.wolfie':
   'editor':
-    'commentStart': '#'
     'increaseIndentPattern': '(?x)
        ^ .* \\{ [^}"\']* $
       |^ .* \\( [^\\)"\']* $

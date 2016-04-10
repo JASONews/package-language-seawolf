@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "A language package for Wolfie which is a course project of Stony Brook Spring 2016 CSE 307 class",
   "keywords": [
+    "language-wolfie",
+    "Wolfie",
+    "wf"
   ],
   "activationCommands": {
     "atom-workspace": "language-wolfie:toggle"
@@ -13,5 +16,6 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
+    "coffeelint": "^1.10.1"
   }
 }

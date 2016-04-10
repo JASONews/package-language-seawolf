@@ -2,92 +2,116 @@
 'fileTypes': [
   'wf'
 ]
-'name': 'wolfie'
+'name': 'Wolfie'
 'patterns': [
   {
-    'name': 'string.wolfie'
-    'match': '\\"[^\\"]*\\"'
+    'include': '#string'
   }
   {
-    'name': 'constant.numeric.real.wolfie'
-    'match': '\\d*(\\d\\.|\\.\\d)\\d*'
+    'include': '#single_quote_string'
   }
   {
-    'name': 'constant.numeric.integer.wolfie'
-    'match': '\\d+'
+    'include': '#real'
   }
   {
-    'name': 'keyword.control.wolfie'
-    'match': 'if|else|while|break|continue|switch|case|return'
+    'include': '#integer'
   }
   {
-    'name': 'keyword.operator.arithmetic.wolfie'
-    'match': '\\+|\\-|\\*\\*|\\/|\\(|\\)|\\{|\\}'
+    'include': '#control_keyword'
   }
   {
-    'name': 'keyword.operator.logical.wolfie'
-    'match': 'and|or|not|\\!|\\&\\&|\\|\\|'
+    'include': '#arithmetic_operator'
   }
   {
-    'name': 'support.function.builtin.wolfie'
-    'match': 'print'
-  }
-
-
-  {
-    'begin': '^\\s*(?!((print)|(if)|(while)))(?=[(A-Za-z][A-Za-z0-9]*\\s*\\()(?=[^;]*\\{)'
-    'end': '(\\))\\s*(?=\\{)'
-    'endCaptures':
-      '1':
-        'name': 'punctuation.definition.parameters.end.wolfie'
-      '2':
-        'name': 'punctuation.section.function.begin.wolfie'
-    'name': 'meta.function.wolfie'
-    'patterns': [
-      {
-        'name': 'keyword.control.wolfie'
-        'match': 'if|else|while|break|continue|switch|case|return'
-      }
-      {
-        'name': 'support.function.builtin.wolfie'
-        'match': 'print'
-      }
-      {
-        'begin': '(?=[A-Za-z][A-Za-z0-9]*)'
-        'contentName': 'entity.name.function.wolfie'
-        'end': '(?![A-Za-z0-9])'
-      }
-      {
-        'begin': '(\\()'
-        'beginCaptures':
-          '1':
-            'name': 'punctuation.definition.parameters.begin.wolfie'
-        'contentName': 'meta.function.parameters.wolfie'
-        'end': '(?=\\)\\s*\\{)'
-        'patterns': [
-          {
-            'match': '\\b([a-zA-Z][a-zA-Z0-9]*)\\s*(?:(,)|(?=\\)))'
-            'captures':
-              '1':
-                'name': 'variable.parameter.function.wolfie'
-              '2':
-                'name': 'punctuation.separator.parameters.wolfie'
-
-          }
-        ]
-      }
-    ]
-  }
-
-  {
-    'match': '(\\b[A-Za-z][A-Za-z0-9]*)\\s*\\('
-    'captures':
-      '1':
-        'name': 'meta.name.function.wolfie'
-
+    'include': '#logical_operator'
   }
   {
-    'name': 'variable.other.wolfie'
-    'match': '\\b[A-Za-z][A-Za-z0-9_]*\\b'
+    'include': '#builtin_function'
+  }
+  {
+    'include': '#function_definition'
+  }
+  {
+    'include': '#function_call'
+  }
+  {
+    'include': '#variable'
   }
 ]
+'repository':
+  'string':
+    'name': 'string.wolfie'
+    'match': '\\"[^\\"]*\\"'
+  'single_quote_string':
+    'begin': '\''
+    'end': '\''
+    'name':'invalid.illegal.string.wolfie'
+  'real':
+    'name': 'constant.numeric.real.wolfie'
+    'match': '\\d*(\\d\\.|\\.\\d)\\d*'
+  'control_keyword':
+    'name': 'keyword.control.wolfie'
+    'match': 'if|else|while|break|continue|switch|case|return'
+  'integer':
+    'name': 'constant.numeric.integer.wolfie'
+    'match': '\\d+'
+  'arithmetic_operator':
+    'name': 'keyword.operator.arithmetic.wolfie'
+    'match': '\\+|\\-|\\*\\*|\\/|\\(|\\)|\\{|\\}'
+  'logical_operator':
+    'name': 'keyword.operator.logical.wolfie'
+    'match': 'and|or|not|\\!|\\&\\&|\\|\\|'
+  'builtin_function':
+    'name': 'support.function.builtin.wolfie'
+    'match': 'print'
+  'function_definition':
+    {
+      'begin': '^\\s*(?!((print)|(if)|(while)))(?=[(A-Za-z][A-Za-z0-9]*\\s*\\()(?=[^;]*\\{)'
+      'end': '(\\))\\s*(?=\\{)'
+      'endCaptures':
+        '1':
+          'name': 'punctuation.definition.parameters.end.wolfie'
+        '2':
+          'name': 'punctuation.section.function.begin.wolfie'
+      'name': 'meta.function.wolfie'
+      'patterns': [
+        {
+          'include': '#control_keyword'
+        }
+        {
+          'include': '#builtin_function'
+        }
+        {
+          'begin': '(?=[A-Za-z][A-Za-z0-9]*)'
+          'contentName': 'entity.name.function.wolfie'
+          'end': '(?![A-Za-z0-9])'
+        }
+        {
+          'begin': '(\\()'
+          'beginCaptures':
+            '1':
+              'name': 'punctuation.definition.parameters.begin.wolfie'
+          'contentName': 'meta.function.parameters.wolfie'
+          'end': '(?=\\)\\s*\\{)'
+          'patterns': [
+            {
+              'match': '\\b([a-zA-Z][a-zA-Z0-9]*)\\s*(?:(,)|(?=\\)))'
+              'captures':
+                '1':
+                  'name': 'variable.parameter.function.wolfie'
+                '2':
+                  'name': 'punctuation.separator.parameters.wolfie'
+
+            }
+          ]
+        }
+      ]
+    }
+  'function_call':
+    'match': '(\\b[A-Za-z][A-Za-z0-9]*)\\s*(?=\\()'
+    'captures':
+      '1':
+        'name': 'meta.function.wolfie'
+  'variable':
+    'name': 'variable.other.wolfie'
+    'match': '\\b[A-Za-z][A-Za-z0-9_]*\\b'
