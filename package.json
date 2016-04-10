@@ -1,6 +1,6 @@
 {
   "name": "language-seawolf",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A language package for Seawolf which is a course project of Stony Brook Spring 2016 CSE 307 class",
   "keywords": [
     "language-seawolf",
