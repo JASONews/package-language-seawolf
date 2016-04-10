@@ -1,4 +1,4 @@
-# language-wolfie package
+# language-seawolf package
 
 A language package for Seawolf which is a course project of Stony Brook Spring 2016 CSE 307 class. Some code are borrowed from language-c and language-python packages. Contributions are greatly appreciated. GO SEAWOLF!
 
