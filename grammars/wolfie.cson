@@ -1,8 +1,8 @@
-'scopeName': 'source.wolfie'
+'scopeName': 'source.seawolf'
 'fileTypes': [
-  'wf'
+  'sw'
 ]
-'name': 'Wolfie'
+'name': 'Seawolf'
 'patterns': [
   {
     'include': '#string'
