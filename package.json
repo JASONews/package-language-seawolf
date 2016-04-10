@@ -10,7 +10,7 @@
   "activationCommands": {
     "atom-workspace": "language-wolfie:toggle"
   },
-  "repository": "git@github.com:JASONews/package-language-wolfie.git",
+  "repository": "https://github.com/JASONews/package-language-wolfie",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
